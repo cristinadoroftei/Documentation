@@ -3,7 +3,7 @@ const app = require("express")();
 
 app.get('/', (req, res) => {
     console.log(__dirname)
-    return res.sendFile(`${__dirname}/web-front/index.html`);
+    return res.sendFile(`${__dirname}/index.html`);
 })
 
 app.get('/home', (req,res) => {
