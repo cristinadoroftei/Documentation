@@ -2,8 +2,13 @@ const app = require("express")();
 
 
 app.get('/', (req, res) => {
+    console.log(__dirname)
+    return res.sendFile(`${__dirname}/web-front/index.html`);
+})
+
+app.get('/home', (req,res) => {
     return res.send({
-        description: 'The sweet starting point of learning how to make an API using NodeJs'
+        question: "Maybe it works"
     })
 })
 const server = app.listen(3000, error => {
