@@ -7,7 +7,7 @@ body{
 
 .nav {
     height: 100%;
-    width: 0;
+    width: 250px;
     position:fixed;
     z-index: 1;
     top: 0;
@@ -17,6 +17,27 @@ body{
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.7s;
+}
+
+.nav-closed {
+    width: 0;
+    transition: 0.7s;
+}
+
+.page {
+    padding: 20px;
+    transition: 0.7s;
+    overflow: hidden;
+    width: 100%;
+    margin-left: 250px;
+}
+
+.page-closed {
+    padding: 20px;
+    transition: 0.7s;
+    overflow: hidden;
+    width: 100%;
+    margin-left: 0;
 }
 
 .nav a{
@@ -32,22 +53,9 @@ body{
     transition: 0.4s;
 }
 
-.nav .close {
-    position: absolute;
-    top: 0;
-    right: 22px;
-    margin-left: 50px;
-    font-size: 30px;
-}
 
 .slide a{
     color: black;
     font-size: 36px;
 }
 
-#content {
-    padding: 20px;
-    transition: 0.4s;
-    overflow: hidden;
-    width: 100%;
-}

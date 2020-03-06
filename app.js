@@ -1,17 +1,27 @@
-const app = require("express")();
+const express = require("express");
 
+const app = express();
+const fs = require('fs')
+var path = require('path');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+fs.readFile('./public/data.json', 'utf8', function(error, data){
+    userObj = JSON.parse(data)
+});
+
+app.locals.data = require('./public/data.json')
 
 app.get('/', (req, res) => {
-    console.log(__dirname)
-    return res.sendFile(`${__dirname}/index.html`);
+    return res.sendFile('./index.html');
 })
 
-app.get('/home', (req,res) => {
-    return res.send({
-        question: "Maybe it works"
-    })
+app.get('/data', (req,res) => {
+    console.log('sss')
+    return res.send({})
 })
-const server = app.listen(3000, error => {
+
+const server = app.listen(4000, error => {
     if(error){
         console.log(error)
     }
