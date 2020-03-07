@@ -4,12 +4,20 @@
     {
         "title": ["<h1 id='title'>Javascript in a nutshell</h1>" ,
                   "<p class='info-text'>JavaScript is a scripting language used to create and control dynamic website content,",
-                   "i.e. data validation, display popup messages, handling different events of DOM elements, modifying style of DOM elements etc.</>",
-                "<p class='info-text'>JavaScript is mostly used on the front end, but it’s versatile enough to be used on back end infrastructure, too.</>"],
+                  "i.e. data validation, display popup messages, handling different events of DOM elements, modifying style of DOM elements etc.</p>",
+                  "<br />",
+                  "<p class='info-text'>JavaScript is mostly used on the front end, but it’s versatile enough to be used on back end infrastructure, too.</>", 
+                  "<p class='info-text'>Overview of javascript:</p>",
+                  "<br/>",
+                  "<div class='border'>Weakly Typed Language</div>",
+                    "<div class='info-text'>",
+                  "<p id='dot-text'> • No explicit type assignment:",
+                    "</div>",
+                  "</p>"],
         "content": "content1"
     },
 
-    "let-vs-const":
+    "letVsConst":
     {
         "title": "More Node.js",
         "content":"content2"

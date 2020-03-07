@@ -9,6 +9,10 @@ body{
     overflow-x: hidden;
 }
 
+#title{
+    font-size: 2.5em;
+}
+
 .nav {
     height: 100%;
     width: 250px;
@@ -23,6 +27,7 @@ body{
     transition: 0.7s;
     text-align: left;
 }
+
 
 .dropdown-btn {
     width: 300px;
@@ -51,6 +56,19 @@ body{
 .nav-closed {
     width: 0;
     transition: 0.7s;
+}
+
+.border {
+    background-color: beige; /* Changing background color */
+    border-radius: 20px; /* Making border radius */
+    width: 10em; /* Making auto-sizable width */
+    height: auto; /* Making auto-sizable height */
+    padding-left: 10px; /* Making space around letters */
+    font-size: 1.5em; /* Changing font size */
+}
+
+#dot-text {
+    font-style: italic;
 }
 
 .page {

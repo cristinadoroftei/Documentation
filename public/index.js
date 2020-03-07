@@ -32,6 +32,7 @@ function homeClick(){
     $( ".documentation" ).append( `${userObj.whatIsJavascript.title.join('\n')}` );
     $(".info-text").css("font-size", "1.3em")
     $(".info-text").css("margin", "0.3em")
+    
 
 }
 
