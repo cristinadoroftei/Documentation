@@ -1,22 +1,51 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text&display=swap');
+
 
 body{
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Crimson Text', serif;
     overflow-x: hidden;
 }
 
 .nav {
     height: 100%;
     width: 250px;
-    position:fixed;
+    position: fixed;
+    left: 0;
     z-index: 1;
     top: 0;
-    left: 0;
     background-color: black;
     opacity: .9;
     overflow-x: hidden;
-    padding-top: 60px;
+    padding-top: 75px;
     transition: 0.7s;
+    text-align: left;
+}
+
+.dropdown-btn {
+    width: 300px;
+    z-index: 1;
+    top: 0;
+    margin-left: 0;
+    opacity: .9;
+    overflow-x: hidden;
+    padding-top: 0.7em;
+    transition: 0.7s;
+    border-color: transparent transparent transparent transparent;
+    background-color: black;
+    color: #ccc;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.4em;
+    text-align: left;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown-btn:hover{
+    color: #fff;
+    transition: 0.4s;
 }
 
 .nav-closed {
@@ -28,26 +57,40 @@ body{
     padding: 20px;
     transition: 0.7s;
     overflow: hidden;
-    width: 100%;
+    width: 80%;
     margin-left: 250px;
+    margin-right: 15em;
 }
 
 .page-closed {
     padding: 20px;
     transition: 0.7s;
     overflow: hidden;
-    width: 100%;
-    margin-left: 0;
+    width: 90%;
+    margin-left: 5em;
+    margin-right: 5em;
 }
 
-.nav a{
-    display: block;
-    padding: 20px 30px;
-    font-size: 25px;
+
+.dropdown-container a {
+    padding: 0.6em 1em;
+    font-size: 1.4em;
     text-decoration: none;
     color: #ccc;
+    display: none;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
 }
 
+.dropdown-container-open a {
+    padding: 0.3em 1em;
+    font-size: 1.3em;
+    text-decoration: none;
+    color: #ccc;
+    display: block;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
 .nav a:hover {
     color: #fff;
     transition: 0.4s;
