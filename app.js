@@ -21,7 +21,7 @@ app.get('/data', (req,res) => {
     return res.send({})
 })
 
-const server = app.listen(4000, error => {
+const server = app.listen(3000, error => {
     if(error){
         console.log(error)
     }

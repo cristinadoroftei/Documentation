@@ -9,8 +9,18 @@ body{
     overflow-x: hidden;
 }
 
-#title{
+.title{
     font-size: 2.5em;
+}
+
+.brown-and-italic{
+    font-style: oblique;
+    color: brown;
+}
+
+.purple-font-bold{
+    color: purple;
+    font-weight: bold;
 }
 
 .nav {
@@ -58,17 +68,51 @@ body{
     transition: 0.7s;
 }
 
-.border {
+.beige-border {
     background-color: beige; /* Changing background color */
     border-radius: 20px; /* Making border radius */
-    width: 10em; /* Making auto-sizable width */
     height: auto; /* Making auto-sizable height */
     padding-left: 10px; /* Making space around letters */
     font-size: 1.5em; /* Changing font size */
 }
 
-#dot-text {
+.aquamarine-border {
+    background-color: aquamarine;
+    border-radius: 20px; /* Making border radius */
+    height: auto; /* Making auto-sizable height */
+    padding-left: 10px; /* Making space around letters */
+    font-size: 1.5em; /* Changing font size */
+}
+
+.tan-border {
+    background-color: tan;
+    border-radius: 20px; /* Making border radius */
+    height: auto; /* Making auto-sizable height */
+    padding-left: 10px; /* Making space around letters */
+    font-size: 1.5em; /* Changing font size */
+}
+
+#weakly-typed-language-border{
+    width: 10em; /* Making auto-sizable width */
+}
+
+#object-oriented-language-border{
+    width: 10.5em; /* Making auto-sizable width */
+}
+
+#versatile-border{
+    width: 7.6em;
+}
+
+
+.dot-text {
     font-style: italic;
+    font-weight: 600;
+}
+
+.explicit-dot-text {
+    font-style: italic;
+    font-weight: 100;
 }
 
 .page {

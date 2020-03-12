@@ -2,25 +2,97 @@
 
     "whatIsJavascript": 
     {
-        "title": ["<h1 id='title'>Javascript in a nutshell</h1>" ,
+        "content": ["<h1 class='title'>Javascript in a nutshell</h1>" ,
                   "<p class='info-text'>JavaScript is a scripting language used to create and control dynamic website content,",
                   "i.e. data validation, display popup messages, handling different events of DOM elements, modifying style of DOM elements etc.</p>",
                   "<br />",
                   "<p class='info-text'>JavaScript is mostly used on the front end, but it’s versatile enough to be used on back end infrastructure, too.</>", 
                   "<p class='info-text'>Overview of javascript:</p>",
                   "<br/>",
-                  "<div class='border'>Weakly Typed Language</div>",
+                  "<div class='beige-border' id='weakly-typed-language-border' >Weakly Typed Language</div>",
                     "<div class='info-text'>",
-                  "<p id='dot-text'> • No explicit type assignment:",
+                       "<p class='dot-text'> • No explicit type assignment:",
+                            "<span class = 'explicit-dot-text'> Javascript knows types like numbers, string or booleans, but it doesn't force you to define which type you are using in a variable.</span>",
+                       "</p>",
+                       "<p class='dot-text'> • Data types can be switched dynamically:",
+                       "<span class = 'explicit-dot-text'> Indeed, you can have a variable where you store a number which you can suddenly change to a text variable. While this gives you greater flexibility to be able to change variables and not to have strict typing, it can also lead to errors, so it's something you have to also be aware of.</span>",
+                       "</p>",
                     "</div>",
-                  "</p>"],
-        "content": "content1"
+                    "<br/>",
+                  "<div class='aquamarine-border' id='object-oriented-language-border'>Multi-paradigm Language</div>",
+                  "<div class='info-text'>",
+                    "<p class='dot-text'> • Data can be organized in logical objects:",
+                       "<span class = 'explicit-dot-text'> JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well. JavaScript supports object-oriented programming with object prototypes, instead of classes. JavaScript also supports functional programming — because they are objects, functions may be stored in variables and passed around like any other object.</span>",
+                    "</p>",
+                  "</div>",
+                  "<br/>",
+                  "<div class='tan-border' id='versatile-border'>Versatile Language</div>",
+                  "<div class='info-text'>",
+                    "<p class='dot-text'> • Runs in browser & directly on a PC/Server:",
+                       "<span class = 'explicit-dot-text'> Javacript runs in a browser and this is actually where it comes from, but you can also use it with NodeJs to run it on your PC outside of a browser setup or also on a server.</span>",
+                    "</p>",
+                  "</div>",
+                  "<br/>"
+                  ]
     },
 
-    "letVsConst":
+    "varVsLetVsConst":
     {
-        "title": "More Node.js",
-        "content":"content2"
+        "content":[ "<h1 class='title'>var, let, const -What's the difference?</h1>",
+                    "<p class='info-text'> Before we can understand how <code class = 'purple-font-bold'>var</code>, <code class = 'purple-font-bold'>let</code> and <code class = 'purple-font-bold'>const</code> differ we need to understand a computer science-y concept called",
+                      "<span class = 'brown-and-italic'> scope.</span>",
+                      "<span>Scoping is determining where variables, functions, and objects are accessible in your code during runtime. </span>",
+                    "</p>",
+                    "<br/>",
+
+                    "<p class='info-text'>Firstly, <code class = 'purple-font-bold'>var</code> variables can be redefined or updated. Let’s use console.log to show the width which we can update to be 200, and then we’ll console log the width again.</p>",
+                    "<pre><code class='language-javascript'>var width = 100;",
+                        "console.log(width); // 100",
+                        "width = 200;",
+                        "console.log(width); // 200",
+                        "var width = 300",
+                        "console.log(width) //300",
+                    "</code></pre>",
+                    "<br />",
+
+                    "<p class='info-text'><code class = 'purple-font-bold'>var</code> variables are <span class = 'brown-and-italic'>function scoped</span>, which means that they are only available inside the function that they are created in. However, if they are not declared in a function, then they are <span class = 'brown-and-italic'>globally scoped</span>, and they’re available in the whole window.</p>",
+                    "<pre><code class='language-javascript'>var cat = 'cat';",
+                    "function animals(){",
+                        "   var dog = 'dog';",
+                        "   if (cat != null) {",
+                        "     var kitten = 'kitten';",
+                        "   }",
+                        "   console.log(cat); // cat",
+                        "   console.log(dog); // dog",
+                        "   console.log(kitten); //kitten",
+                    "}",
+                    "console.log(cat); // cat",
+                    "console.log(bird); // Uncaught ReferenceError: dog is not defined",
+                    "console.log(kitten); // Uncaught ReferenceError: kitten is not defined",
+                    "animals();",
+                "</code></pre>",
+                "<br />",
+
+                "<p class='info-text'>However, in many cases <code class = 'purple-font-bold'>var</code> doesn't seem like it would be the best choice. But why? Look careful here: </p>",
+                "<pre><code class='language-javascript'>var age = 100;",
+                    "if(age > 12) {",
+                    "  var dogYears = age * 7;",
+                    "console.log(`You are ${dogYears} dog years old!`);",
+                    "}",
+                "</code></pre>",
+                "<p class='info-text'>The one thing that is a little bit strange here is that <code> var dogYears </code> is just a temporary variable, and I just needed this real quick in order to calculate something and then stick it into a <code>console.log</code>. If you go to your browser console and call dogYears, you’ll see that it’s leaked outside of the if statement and it is now a global variable that lives on window, which isn’t really what we want.</p>",
+                "<p class='info-text'>Now it's time for <code class = 'purple-font-bold'>let</code> and <code class = 'purple-font-bold'>const</code> to shine and show why they are better. </p>",
+                "<br />",
+
+                "<p class='info-text'>One of the benefits of using <code class = 'purple-font-bold'>let</code> and <code class = 'purple-font-bold'>const</code> is that instead of a variable being scoped to the function, it is <span class = 'brown-and-italic'>block scoped</span>. It means that it will be scoped to the closest set of curly brackets. This code seems like a better choice:</p>",
+                "<pre><code class='language-javascript'>let age = 100;",
+                    "if(age > 12) {",
+                    "  let dogYears = age * 7;",
+                    "console.log(`You are ${dogYears} dog years old!`);",
+                    "}",
+                "</code></pre>",
+                "<p class='info-text'>If you call dogYears in the browser console, it says, “Dog years is not defined.” Why? Because I declared it as a <code class = 'purple-font-bold'>let</code> variable. It is only declared inside of a <span class = 'brown-and-italic'>block scope</span>, not a global scope like var and that temporary variable has not leaked out of the block.</p>"
+        ]
     }
 
 }

@@ -4,7 +4,7 @@ var userObj;
 $(function() {
 $.getJSON("data.json",function(data){
 userObj = data;
-homeClick()
+overviewClick()
 
 let dropdown = document.getElementsByClassName("dropdown-btn");
 let i;
@@ -26,20 +26,23 @@ function changeClass(){
     page.classList.toggle('page-closed')
 }
 
-function homeClick(){
+function overviewClick(){
     $(".documentation").remove()
     $(".page").append('<div class="documentation"></div>');
-    $( ".documentation" ).append( `${userObj.whatIsJavascript.title.join('\n')}` );
+    $('.documentation').css('display', 'none').fadeIn(500);
+    $( ".documentation" ).append( `${userObj.whatIsJavascript.content.join('\n')}` );
     $(".info-text").css("font-size", "1.3em")
     $(".info-text").css("margin", "0.3em")
-    
-
 }
 
-function aboutClick(){
+function varLetConstClick(){
     $(".documentation").remove()
     $(".page").append('<div class="documentation" ></div>');
-    $(".documentation").append( "<p>About Sentence</p>" );
+    $(".documentation").append( `${userObj.varVsLetVsConst.content.join('\n')}` );
+    $('.documentation').css('display', 'none').fadeIn(500);
+    $(".info-text").css("font-size", "1.3em")
+    $(".info-text").css("margin", "0.3em")
+    $('body').append(" <script src='prism.js'></script>")
 }
 
 
