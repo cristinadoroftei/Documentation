@@ -92,6 +92,10 @@ body{
     font-size: 1.5em; /* Changing font size */
 }
 
+.bold-text{
+    font-weight: 700;
+}
+
 #weakly-typed-language-border{
     width: 10em; /* Making auto-sizable width */
 }
@@ -104,6 +108,11 @@ body{
     width: 7.6em;
 }
 
+#bytheway-border{
+    width: 4.5em;
+    font-weight: bold;
+    font-style: oblique;
+}
 
 .dot-text {
     font-style: italic;
@@ -113,6 +122,10 @@ body{
 .explicit-dot-text {
     font-style: italic;
     font-weight: 100;
+}
+
+.red-text {
+    color: red;
 }
 
 .page {

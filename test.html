@@ -7,11 +7,13 @@
   </head>
   <body>
     <script>
-    let age = 100;
-    if(age > 12) {
-        let dogYears = age * 7;
-    console.log(`You are ${dogYears} dog years old!`);
-    }
+      var cat = "Sasha";
+      cat = "Kate";
+      function animal() {
+        if (cat === "Kate") {
+          dog = "Ozzy"; // not declared before. Please avoid doing this
+        }
+      }
     </script>
   </body>
 </html>
