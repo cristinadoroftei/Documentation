@@ -104,6 +104,10 @@ body{
     width: 10.5em; /* Making auto-sizable width */
 }
 
+#note-creating-array{
+    width:auto
+}
+
 #versatile-border{
     width: 7.6em;
 }
@@ -112,6 +116,11 @@ body{
     width: 4.5em;
     font-weight: bold;
     font-style: oblique;
+}
+
+.semi-title{
+    font-weight: 600;
+    font-size: xx-large;
 }
 
 .dot-text {

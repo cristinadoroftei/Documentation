@@ -45,4 +45,24 @@ function varLetConstClick(){
     $('body').append(" <script src='prism.js'></script>")
 }
 
+function objectsClick(){
+    $(".documentation").remove()
+    $(".page").append('<div class="documentation" ></div>');
+    $(".documentation").append( `${userObj.objects.content.join('\n')}` );
+    $('.documentation').css('display', 'none').fadeIn(500);
+    $(".info-text").css("font-size", "1.3em")
+    $(".info-text").css("margin", "0.3em")
+    $('body').append(" <script src='prism.js'></script>")
+}
+
+function arraysClick(){
+    $(".documentation").remove()
+    $(".page").append('<div class="documentation" ></div>');
+    $(".documentation").append( `${userObj.arrays.content.join('\n')}` );
+    $('.documentation').css('display', 'none').fadeIn(500);
+    $(".info-text").css("font-size", "1.3em")
+    $(".info-text").css("margin", "0.3em")
+    $('body').append(" <script src='prism.js'></script>")
+}
+
 
