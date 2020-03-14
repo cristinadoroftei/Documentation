@@ -7,28 +7,28 @@
   </head>
   <body>
     <script>
- 
-let seaCreatures = [
-   'octopus',
-   'squid',
-   'shark',
-   'seahorse',
-   'starfish',
-   'whale'
-];
+      //Declare the function 'myFunc'
+      function addAge(theObject) {
+        theObject.age = 23;
+      }
 
-for(let creature of seaCreatures){
-    console.log(creature)
-}
-    
-    
-    
-    
+      function hasDrinkingAge(age) {
+        if (age >= 18) return true;
+        return false;
+      }
 
+      //Create object 'person':
+      let person = {
+        name: "Cristina"
+      };
 
-    
+      // Pass object reference to the function
+      addAge(person);
 
+      //Pass age property to the function
+      const ableToDrink = hasDrinkingAge(person.age);
 
+      console.log(ableToDrink); // expected output: true
     </script>
   </body>
 </html>

@@ -435,10 +435,42 @@
         "for (let creature of seaCreatures) {",
         "console.log(creature); //  octopus squid shark seahorse starfish whale ",
         "}",
-        "</code></pre>"
+        "</code></pre>"     
+    ]},
 
-        
-        
-    ]} 
+    "functions": {
+      "content":[
+        "<h1 class='title'>Understanding Functions in Javascript</h1>",
+        "<p class='info-text'>Generally speaking, a function is a 'subprogram' that can be <span class='bold-text'>called</span> by code external (or internal in the case of recursion) to the function. Like the program itself, a function is composed of a sequence of statements called the <span class='bold-text'>function body</span>. Values can be <span class='bold-text'>passed</span> to a function, and the function will <span class='bold-text'>return</span> a value.</p>",
+        "<pre><code class='language-javascript'>//Declare the function 'addAge'",
+        "function addAge(theObject){",
+        "   theObject.age = 23;",
+        "}",
+        "",
+        "//Declare the function 'hasDrinkingAge'",
+        "function hasDrinkingAge(age){",
+        "   if( age >= 18 )",
+        "     return true;",
+        "   return false;",
+        "}",
+        "",
+        "//Create object 'person':",
+        "let person = {",
+        "   name : 'Cristina'",
+        "}",
+        "",
+        "// Pass object reference to the function",
+        "addAge(person);",
+        "",
+        "//Pass age property to the function",
+        "const ableToDrink = hasDrinkingAge(person.age)",
+        "",
+        "console.log(ableToDrink) // expected output: true",
+        "</code></pre>",
+        "<br />",
+
+        "<p class='info-text'>In JavaScript, functions are first-class objects, because they can have properties and methods just like any other object. What distinguishes them from other objects is that functions can be called.Objects in JavaScript are <span class='bold-text'>extremely</span> versatile. Because of this, we can even <span class='bold-text'>pass a function as a parameter</span> into another function.</p>"
+
+    ]}
 
 }
