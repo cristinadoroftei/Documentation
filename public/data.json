@@ -480,7 +480,7 @@
         "   someoneToPoke(); // call the 'pokeMe' function",
         " }",
         "",
-        " approachSomeone(pokeMe); //send the 'pokeMe' function as a parameter",
+        " approachSomeone(pokeMe); //pass the 'pokeMe' function as a parameter",
         "</code></pre>",
         "<br />",
 
@@ -492,7 +492,37 @@
         "",
         "introduce(\"Cristina\")",
         "</code></pre>",
-        "<br />"
+        "<br />",
+
+        "<p class='info-text'><span class='dot-text'> • Arrow function: </span></p> ",
+        "<pre><code class='language-javascript'>const introduce = (name) => {",
+        "   console.log(\"Hello my name is\", name);",
+        " };",
+        "",
+        "introduce(\"Cristina\")",
+        "</code></pre>",
+        "<br />",
+
+        "<div class='tan-border' id='bytheway-border'>#bytheway</div>",
+        "<p class='info-text'><span class = 'bold-text'>So can I use from now on just arrow functions?</span></p>",
+        "<p class='info-text'>Be careful! Yes, you can use arrow functions as long as you are aware of what <code>this</code> keyword is bound to. In plain function expressions, the <code>this</code> keyword is bound to different values based on the context in which it is called. With arrow functions however, <code>this</code> is lexically bound. It means that it uses <code>this</code> from the code that contains the arrow function. Let's have a small example:</p>",
+        "<pre><code class='language-javascript'>let cat = {",
+        "  lives: 9,",
+        "  jumps: () => {",
+        "    this.lives--;",
+        "  }",
+        "}",
+        "</code></pre>",
+        "<p class='info-text'>When you call <code>cat.jumps</code>, the number of lives does not decrease. It is because this is not bound to anything, and will inherit the value of <code>this</code> from its parent scope.</p>",
+        "<br />",
+
+        "<p class='info-text'><span class = 'bold-text'>What is a callback function?</span></p>",
+        "<p class='info-text'><span class='bold-text'>Simply put</span>: A callback is a function that is to be executed <span class='bold-text'>after</span> another function has finished executing — hence the name ‘call back’.</p>",
+        "<p class='info-text'><span class='bold-text'>More complexly put</span>: In JavaScript, functions are objects. Because of this, functions can take functions as arguments, and can be returned by other functions. Functions that do this are called <span class='bold-text'>higher-order functions</span>. Any function that is passed as an argument is called a <span class='bold-text'>callback function</span>.</p>",
+        "<br />",
+
+        "<p class='info-text'><span class = 'bold-text'>Why do we need callbacks?</span></p>",
+        "<p class='info-text'>For one very important reason — JavaScript is an event driven language. This means that instead of waiting for a response before moving on, JavaScript will keep executing while listening for other events. You can’t just call one function after another and hope they execute in the right order. <span class='brown-and-italic'> Callbacks are a way to make sure certain code doesn’t execute until other code has already finished execution.</span></p>"
       ]},
 
     "nodejs": {
@@ -813,7 +843,25 @@
         "});",
         "</code></pre>",
         "<br />"
+      ]
+    },
 
+    "jquery":{
+      "content":[
+        "<h1 class='title'>Why do we use jQuery?</h1>",
+        "<p class='info-text'>jQuery is a <span class='bold-text'>lightweight</span>, \"write less, do more\", JavaScript library. The purpose of jQuery is to make it much easier to use JavaScript on your website.jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.jQuery also simplifies a lot of the complicated things from JavaScript, like <span class='bold-text'>AJAX calls</span> and <span class='bold-text'>DOM manipulation</span>.</p>",
+        "<br />",
+
+        "<p class='info-text'>The jQuery syntax is tailor-made for selecting HTML elements and performing some action on the element(s).Basic syntax is: <code>$(selector).action()</code></p>",
+                    "<div class='info-text'>",
+                       "<p class='dot-text'> • A <code>$</code> sign to define/access jQuery",
+                        "</p>",
+                       "<p class='dot-text'> • A <code>(selector)</code> to \"query (or find)\" HTML elements",
+                      "</p>",
+                      "<p class='dot-text'> • A jQuery <code>action()</code> to be performed on the element(s)",
+                      "</p>",
+                    "</div>",
+                    "<br/>"
       ]
     }
       

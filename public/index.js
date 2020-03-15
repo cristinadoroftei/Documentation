@@ -26,103 +26,64 @@ function changeClass(){
     page.classList.toggle('page-closed')
 }
 
-function overviewClick(){
+function changePage(page){
     $(".documentation").remove()
     $(".page").append('<div class="documentation"></div>');
     $('.documentation').css('display', 'none').fadeIn(500);
-    $( ".documentation" ).append( `${userObj.whatIsJavascript.content.join('\n')}` );
-    $(".info-text").css("font-size", "1.3em")
-    $(".info-text").css("margin", "0.3em")
+    $( ".documentation" ).append( `${page}` );
+    $('body').append(" <script src='prism.js'></script>")
+}
+
+function overviewClick(){
+    changePage( `${userObj.whatIsJavascript.content.join('\n')}` );
 }
 
 function varLetConstClick(){
-    $(".documentation").remove()
-    $(".page").append('<div class="documentation" ></div>');
-    $(".documentation").append( `${userObj.varVsLetVsConst.content.join('\n')}` );
-    $('.documentation').css('display', 'none').fadeIn(500);
-    $(".info-text").css("font-size", "1.3em")
-    $(".info-text").css("margin", "0.3em")
-    $('body').append(" <script src='prism.js'></script>")
+    changePage( `${userObj.varVsLetVsConst.content.join('\n')}` );
+   
 }
 
 function objectsClick(){
-    $(".documentation").remove()
-    $(".page").append('<div class="documentation" ></div>');
-    $(".documentation").append( `${userObj.objects.content.join('\n')}` );
-    $('.documentation').css('display', 'none').fadeIn(500);
-    $(".info-text").css("font-size", "1.3em")
-    $(".info-text").css("margin", "0.3em")
-    $('body').append(" <script src='prism.js'></script>")
+    changePage( `${userObj.objects.content.join('\n')}` );
 }
 
 function arraysClick(){
-    $(".documentation").remove()
-    $(".page").append('<div class="documentation" ></div>');
-    $(".documentation").append( `${userObj.arrays.content.join('\n')}` );
-    $('.documentation').css('display', 'none').fadeIn(500);
-    $(".info-text").css("font-size", "1.3em")
-    $(".info-text").css("margin", "0.3em")
-    $('body').append(" <script src='prism.js'></script>")
+    changePage( `${userObj.arrays.content.join('\n')}` );
 }
 
 function functionsClick() {
-    $(".documentation").remove()
-    $(".page").append('<div class="documentation" ></div>');
-    $(".documentation").append( `${userObj.functions.content.join('\n')}` );
-    $('.documentation').css('display', 'none').fadeIn(500);
-    $(".info-text").css("font-size", "1.3em")
-    $(".info-text").css("margin", "0.3em")
-    $('body').append(" <script src='prism.js'></script>")
+    changePage( `${userObj.functions.content.join('\n')}` );
+    
 }
 
 function nodejsClick(){
-    $(".documentation").remove()
-    $(".page").append('<div class="documentation" ></div>');
-    $(".documentation").append( `${userObj.nodejs.content.join('\n')}` );
-    $('.documentation').css('display', 'none').fadeIn(500);
-    $(".info-text").css("font-size", "1.3em")
-    $(".info-text").css("margin", "0.3em")
-    $('body').append(" <script src='prism.js'></script>")
+    changePage( `${userObj.nodejs.content.join('\n')}` );
+    
 }
 
 function toolsClick(){
-    $(".documentation").remove()
-    $(".page").append('<div class="documentation" ></div>');
-    $(".documentation").append( `${userObj.tools.content.join('\n')}` );
-    $('.documentation').css('display', 'none').fadeIn(500);
-    $(".info-text").css("font-size", "1.3em")
-    $(".info-text").css("margin", "0.3em")
-    $('body').append(" <script src='prism.js'></script>")
+    changePage( `${userObj.tools.content.join('\n')}` );
+    
 }
 
 function commandsClick(){
-    $(".documentation").remove()
-    $(".page").append('<div class="documentation" ></div>');
-    $(".documentation").append( `${userObj.commands.content.join('\n')}` );
-    $('.documentation').css('display', 'none').fadeIn(500);
-    $(".info-text").css("font-size", "1.3em")
-    $(".info-text").css("margin", "0.3em")
-    $('body').append(" <script src='prism.js'></script>")
+    changePage( `${userObj.commands.content.join('\n')}` );
+    
 }
 
 function modulesClick(){
-    $(".documentation").remove()
-    $(".page").append('<div class="documentation" ></div>');
-    $(".documentation").append( `${userObj.modules.content.join('\n')}` );
-    $('.documentation').css('display', 'none').fadeIn(500);
-    $(".info-text").css("font-size", "1.3em")
-    $(".info-text").css("margin", "0.3em")
-    $('body').append(" <script src='prism.js'></script>")
+    changePage( `${userObj.modules.content.join('\n')}` );
+    
 }
 
 function restClick(){
-    $(".documentation").remove()
-    $(".page").append('<div class="documentation" ></div>');
-    $(".documentation").append( `${userObj.rest.content.join('\n')}` );
-    $('.documentation').css('display', 'none').fadeIn(500);
-    $(".info-text").css("font-size", "1.3em")
-    $(".info-text").css("margin", "0.3em")
-    $('body').append(" <script src='prism.js'></script>")
+    changePage( `${userObj.rest.content.join('\n')}` );
+    
+}
+
+function jqueryClick(){
+    changePage( `${userObj.jquery.content.join('\n')}` );
+    
 }
 
 
