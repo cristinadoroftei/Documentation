@@ -471,6 +471,52 @@
 
         "<p class='info-text'>In JavaScript, functions are first-class objects, because they can have properties and methods just like any other object. What distinguishes them from other objects is that functions can be called.Objects in JavaScript are <span class='bold-text'>extremely</span> versatile. Because of this, we can even <span class='bold-text'>pass a function as a parameter</span> into another function.</p>"
 
-    ]}
+    ]},
+
+    "nodejs": {
+      "content":
+      [
+        "<h1 class='title'>Node.js Project Overview</h1>",
+        "<p class='info-text'><span class = 'semi-title'>What is Node.js?</span></p>",
+        "<p class='info-text'>Node.js is a framework for writing server-side JavaScript applications. Node is often used to build back end services that communicate with client-side applications. These applications get and send data through a back end service called an API. The API serves as an interface between different programs so they are able to talk to each other. </p>",
+        "<br />",
+
+        "<p class='info-text' ><span class='semi-title'>Basic API components overview </span> </p>",
+
+        "<p class='info-text' ><span class='semi-title'>package.json</span> </p>",
+        "<p class='info-text'>In the previous semesters, while working with projects build with Spring, we also learned what is a <span class='bold-text'>maven</span> file. The maven file contains <span class='bold-text'> lifecycle methods</span>(how to build, how to run, how to compile), <span class='bold-text'>dependencies</span and <span='bold-text'>metadata</span>. Guess what? package.json is the same. This file holds various <span class='bold-text'>metadata</span> relevant to the project and is also used to give information to npm that allows it to <span class='bold-text'>identify the project</span> as well as handle the project's <span class='bold-text'>dependencies</span>. The dependencies key has an object as the value. This object takes a <span class='bold-text'>key-value pair</span> where the key is the package name and the value is the version number. </p>",
+        "<p class='info-text'>The version number is in <span class='bold-text'>semver syntax</span> which designates each section with different meaning. semver is broken into three sections separated by a dot.</p>",
+        "<p class='info-text'>Given a version number MAJOR.MINOR.PATCH, increment the:</p>",
+        "<div class='info-text'>",
+        "<p class='dot-text'> • MAJOR ",
+          "<span class = 'explicit-dot-text'>version when you make incompatible API changes</span>",
+        "</p>",
+        "<p class='dot-text'> • MINOR ",
+          "<span class = 'explicit-dot-text'>version when you add functionality in a backwards compatible manner, and</span>",
+        "</p>",
+        "<p class='dot-text'> • PATCH ",
+          "<span class='explicit-dot-text'>version when you make backwards compatible bug fixes.</span>",
+        "</p>",
+        "</div>",
+        "<pre><code class='language-javascript'>major.minor.patch",
+        "1.0.2",
+        "</code></pre>",
+        "<p class='info-text'>npm uses the <span class= 'bold-text'>tilde (~)</span> and <span class='bold-text'>caret (^)</span> to designate which patch and minor versions to use respectively. So if you see ~1.0.2 it means to install version 1.0.2 or the latest patch version such as 1.0.4. If you see ^1.0.2 it means to install version 1.0.2 or the latest minor or patch version such as 1.1.0.</p>",
+        "<br />",
+
+        "<p class='info-text' ><span class='semi-title'>package-lock.json</span></p>",
+        "<p class='info-text'><code>package-lock.json</code> is an very important improvement for npm: <span class='bold-text'>guarantee exact same version of every package</span>. How to make sure your project built with same packages in different environments in a different time? Let's say, you may use ^1.2.3 in your <code>package.json</code>, or some of your dependencies are using that way, but how can you ensure each time npm install will pick up same version in your dev machine and in the build server? <code>package-lock.json</code> will ensure that.</p> ",
+        "<br />",
+
+        "<p class='info-text' ><span class='semi-title'>node_modules</span></p>",
+        "<p class='info-text'>The <code>node_modules</code> directory is only for <span class='bold-text'>build tools</span>. The <code>package.json</code> file in the app root defines what libraries will be installed into <code>node_modules</code> when you run npm install.You shouldn't push it to github (you should even add it to your .gitignore), bacause everyone who clones your repository can download it themselves (based on your package.json).</p>"
+      ]
+    },
+
+    "tools":{
+      "content":[
+        "<h1 class='title'>Node.js Project Overview</h1>"
+      ]
+    }
 
 }

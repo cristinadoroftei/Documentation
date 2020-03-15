@@ -75,4 +75,24 @@ function functionsClick() {
     $('body').append(" <script src='prism.js'></script>")
 }
 
+function nodejsClick(){
+    $(".documentation").remove()
+    $(".page").append('<div class="documentation" ></div>');
+    $(".documentation").append( `${userObj.nodejs.content.join('\n')}` );
+    $('.documentation').css('display', 'none').fadeIn(500);
+    $(".info-text").css("font-size", "1.3em")
+    $(".info-text").css("margin", "0.3em")
+    $('body').append(" <script src='prism.js'></script>")
+}
+
+function toolsClick(){
+    $(".documentation").remove()
+    $(".page").append('<div class="documentation" ></div>');
+    $(".documentation").append( `${userObj.tools.content.join('\n')}` );
+    $('.documentation').css('display', 'none').fadeIn(500);
+    $(".info-text").css("font-size", "1.3em")
+    $(".info-text").css("margin", "0.3em")
+    $('body').append(" <script src='prism.js'></script>")
+}
+
 
