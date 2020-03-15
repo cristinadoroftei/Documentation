@@ -95,4 +95,34 @@ function toolsClick(){
     $('body').append(" <script src='prism.js'></script>")
 }
 
+function commandsClick(){
+    $(".documentation").remove()
+    $(".page").append('<div class="documentation" ></div>');
+    $(".documentation").append( `${userObj.commands.content.join('\n')}` );
+    $('.documentation').css('display', 'none').fadeIn(500);
+    $(".info-text").css("font-size", "1.3em")
+    $(".info-text").css("margin", "0.3em")
+    $('body').append(" <script src='prism.js'></script>")
+}
+
+function modulesClick(){
+    $(".documentation").remove()
+    $(".page").append('<div class="documentation" ></div>');
+    $(".documentation").append( `${userObj.modules.content.join('\n')}` );
+    $('.documentation').css('display', 'none').fadeIn(500);
+    $(".info-text").css("font-size", "1.3em")
+    $(".info-text").css("margin", "0.3em")
+    $('body').append(" <script src='prism.js'></script>")
+}
+
+function restClick(){
+    $(".documentation").remove()
+    $(".page").append('<div class="documentation" ></div>');
+    $(".documentation").append( `${userObj.rest.content.join('\n')}` );
+    $('.documentation').css('display', 'none').fadeIn(500);
+    $(".info-text").css("font-size", "1.3em")
+    $(".info-text").css("margin", "0.3em")
+    $('body').append(" <script src='prism.js'></script>")
+}
+
 

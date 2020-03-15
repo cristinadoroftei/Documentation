@@ -484,7 +484,19 @@
         "<p class='info-text' ><span class='semi-title'>Basic API components overview </span> </p>",
 
         "<p class='info-text' ><span class='semi-title'>package.json</span> </p>",
-        "<p class='info-text'>In the previous semesters, while working with projects build with Spring, we also learned what is a <span class='bold-text'>maven</span> file. The maven file contains <span class='bold-text'> lifecycle methods</span>(how to build, how to run, how to compile), <span class='bold-text'>dependencies</span and <span='bold-text'>metadata</span>. Guess what? package.json is the same. This file holds various <span class='bold-text'>metadata</span> relevant to the project and is also used to give information to npm that allows it to <span class='bold-text'>identify the project</span> as well as handle the project's <span class='bold-text'>dependencies</span>. The dependencies key has an object as the value. This object takes a <span class='bold-text'>key-value pair</span> where the key is the package name and the value is the version number. </p>",
+        "<p class='info-text'>In the previous semesters, while working with projects build with Spring, we also learned what is a <span class='bold-text'>maven</span> file. The maven file contains <span class='bold-text'> lifecycle methods</span>(how to build, how to run, how to compile), <span class='bold-text'>dependencies</span> and <span class='bold-text'>metadata</span>. Guess what? package.json is the same. This file holds various <span class='bold-text'>metadata</span> relevant to the project and is also used to give information to npm that allows it to <span class='bold-text'>identify the project</span> as well as handle the project's <span class='bold-text'>dependencies</span>. The dependencies key has an object as the value. This object takes a <span class='bold-text'>key-value pair</span> where the key is the package name and the value is the version number. </p>",
+        "<p class='info-text'>Here's an example package.json file:</p>",
+        "<pre><code class='language-javascript'> {}",
+        "</code></pre>",
+        "<p class='info-text'>It's empty! There are no fixed requirements of what should be in a package.json file, for an application. The only requirement is that <span class='bold-text'>it respects the JSON format</span>, otherwise it cannot be read by programs that try to access its properties programmatically.</p>",
+        "<p class='info-text'>This is another example of an package.json file:</p>",
+        "<pre><code class='language-javascript'>{",
+        "  \"dependencies\": {",
+        "    \"express\": \"4.17.1\",",
+        "    \"request\": \"^2.88.2\",",
+        "   }",
+        "}",
+        "</code></pre>",
         "<p class='info-text'>The version number is in <span class='bold-text'>semver syntax</span> which designates each section with different meaning. semver is broken into three sections separated by a dot.</p>",
         "<p class='info-text'>Given a version number MAJOR.MINOR.PATCH, increment the:</p>",
         "<div class='info-text'>",
@@ -501,7 +513,7 @@
         "<pre><code class='language-javascript'>major.minor.patch",
         "1.0.2",
         "</code></pre>",
-        "<p class='info-text'>npm uses the <span class= 'bold-text'>tilde (~)</span> and <span class='bold-text'>caret (^)</span> to designate which patch and minor versions to use respectively. So if you see ~1.0.2 it means to install version 1.0.2 or the latest patch version such as 1.0.4. If you see ^1.0.2 it means to install version 1.0.2 or the latest minor or patch version such as 1.1.0.</p>",
+        "<p class='info-text'><a href='#' onclick='toolsClick()'>npm</a> uses the <span class= 'bold-text'>tilde (~)</span> and <span class='bold-text'>caret (^)</span> to designate which patch and minor versions to use respectively. So if you see ~1.0.2 it means to install version 1.0.2 or the latest patch version such as 1.0.4. If you see ^1.0.2 it means to install version 1.0.2 or the latest minor or patch version such as 1.1.0.</p>",
         "<br />",
 
         "<p class='info-text' ><span class='semi-title'>package-lock.json</span></p>",
@@ -515,8 +527,163 @@
 
     "tools":{
       "content":[
-        "<h1 class='title'>Node.js Project Overview</h1>"
+        "<h1 class='title'>Tools</h1>",
+        "<p class='info-text' ><span class='semi-title'>npm </span> </p>",
+        "<p class='info-text'><span class='bold-text'>SYNOPSIS</span></p>",
+        "<pre><code class='language-bash'> npm < command > [args]",
+        "</code></pre>",
+        "<p class='info-text'><span class='bold-text'>DESCRIPTION</span></p>",
+        "<p class='info-text'>To make use of these tools (or packages) in Node.js, we need to be able to <span class='bold-text'>install</span> and <span class='bold-text'>manage</span> them in a useful way. This is where npm, the <span class = 'bold-text'>Node package manager</span>, comes in. It is extremely configurable to support a wide variety of use cases. Most commonly, it is used to <span class='bold-text'>publish, discover, install, and develop</span> node programs.</p>"
+      ]
+    },
+
+    "commands": {
+      "content": [
+        "<h1 class='title'>Commands</h1>",
+        "<p class='info-text' ><span class='semi-title'>Run Node.js scripts</span></p>",
+        "<p class='info-text'>If your main Node.js application file is <code>app.js</code>, you can call it by typing:</p>",
+        "<br />",
+        "<pre><code class='language-bash'> node app.js </code></pre>",
+        "<p class='info-text'>The usual way to run a Node.js program is to run the node globally available command (once you install Node.js) and pass the name of the file you want to execute.</p>",
+        "<br />",
+        "<p class='info-text'>or</p>",
+        "<br />",
+
+        "<pre><code class='language-bash'> nodemon app.js </code></pre>",
+        "<p class='info-text'><code>nodemon</code> will watch the files in the directory in which nodemon was started, and if any files change, nodemon will automatically restart your node application.</p>",
+        "<br />",
+        "<div class='beige-border' id='note-creating-array' ><span class='bold-text'>Note</span>: Never use the nodemon command in production! Use it only in the development environment!</div>",
+        "<br />",
+
+        "<p class='info-text' ><span class='semi-title'>Installing all dependencies</span></p>",
+        "<p class='info-text'>If a project has a <a href='#' onclick='nodejsClick()' <code>package.json</code></a> file, by running</p>",
+        "<pre><code class='language-bash'> npm install </code></pre>",
+        "<p class='info-text'>it will install everything the project needs, in the <a href='#' onclick='nodejsClick()' <code>node_modules</code></a> folder, creating it if it's not existing already and also <code>package-lock.json</code></p>",
+        "<br />",
+
+        "<p class='info-text' ><span class='semi-title'>Installing a single package</span></p>",
+        "<p class='info-text'>You can also install a specific package by running</p>",
+        "<pre><code class='language-bash'> npm install < package-name > </code></pre>",
+        "<p class='info-text'>Often you'll see more flags added to this command:</p>",
+        "<p class='info-text'> • <code>--save</code> installs and adds the entry to the <a href='#' onclick='nodejsClick()'<code>package.json</code></a> file <span class='italic-text'>dependencies</span>",
+        "<p class='info-text'> • <code>--save-dev</code>  installs and adds the entry to the <a href='#' onclick='nodejsClick()'<code>package.json</code></a> file <span class='italic-text'>devDependencies</span></p>",
+        "<p class='info-text'>The difference is mainly that <code>devDependencies</code> are usually development tools, like a testing library, while <code>dependencies</code> are bundled with the app in production.</p>",
+        "<br />",
+
+        "<p class='info-text' ><span class='semi-title'>Updating packages</span></p>",
+        "<p class='info-text'>Updating is also made easy, by running</p>",
+        "<pre><code class='language-bash'> npm update </code></pre>",
+        "<p class='info-text'>npm will check all packages for a newer version that satisfies your versioning constraints.</p>",
+        "<br />",
+
+        "<p class='info-text' ><span class='semi-title'>Updating a specific package</span></p>",
+        "<p class='info-text'>You can specify a single package to update as well:</p>",
+        "<pre><code class='language-bash'> npm update < package-name > </code></pre>",
+        "<br />",
+
+        "<p class='info-text' ><span class='semi-title'>Running Tasks</span></p>",
+        "<p class='info-text'>The <a href='#' onclick='nodejsClick()'<code>package.json</code></a> file supports a format for specifying command line tasks that can be run by using</p>",
+        "<pre><code class='language-bash'> npm run < task-name > </code></pre>",
+        "<p class='info-text'>For example:</p>",
+        "<pre><code class='language-json'>{",
+        " \"dependencies\": {",
+        "     \"express\": \"^4.17.1\",",
+        "     \"nodemon\": \"^2.0.2\"",
+        " },",
+        "  \"scripts\": {",
+        "     \"start-dev\": \"nodemon app.js\"",
+        " }",
+        "}",
+        "</code></pre>",
+        "<p class='info-text'>You can run the first script by typing:</p>",
+        "<pre><code class='language-bash'> npm run start-dev </code></pre>"
+      ]
+    },
+
+    "modules":{
+      "content":[
+        "<h1 class='title'>Modules</h1>",
+        "<p class='info-text' ><span class='semi-title'>express</span></p>",
+        "<p class='info-text'>Express is a minimal and flexible Node.js web application framework that provides a robust set of features to develop web and mobile applications. It facilitates the rapid development of Node based Web applications.</p>",
+        "<p class='info-text'><span class='bold-text'>Simple Example</span></p>",
+        "<p class='info-text'>Following is a very basic Express app which starts a server and listens on port 3000 for connection. If any error occurs, the server will throw the error. This app responds with 'Hello there' for requests to the homepage.</p>",
+        "<pre><code class='language-javascript'>const express = require(\"express\") //this import system is for backend",
+        "const app = express() //instantiate express and put it in app variable",
+        "",
+        "//call the server with app",
+        "//make an http get request with get",
+        "//on path '/', the server will return a JSON representation of a 'Hello there' message",
+        "app.get(\"/\", (req, res) => {",
+        "  return res.send({ message: \"Hello there\" });",
+        "});",
+        "",
+        "//listen on port 3000",
+        "app.listen(3000, error => {",
+        "  if (error) { // if any error occurs, show it in the terminal",
+        "    console.log(error);",
+        "  }",
+        "  console.log(\"Server is running on port\", 3000);",
+        "});",
+        "</code></pre>",
+        "<br />",
+
+        "<p class='info-text' ><span class='semi-title'>nodemon</span></p>",
+        "<p class='info-text'>nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected. -perfect for development</p>",
+        "<br />",
+
+        "<p class='info-text' ><span class='semi-title'>request</span></p>",
+        "<p class='info-text'>Request is designed to be the simplest way possible to make http calls. It supports HTTPS and follows redirects by default. Unfortunately, as of Feb 11th 2020, request is fully deprecated. No new changes are expected land. In fact, none have landed for some time.</p>",
+        "<pre><code class='language-javascript'>const request = require('request');",
+        "request('http://www.google.com', function (error, response, body) {",
+        "   console.error('error:', error); // Print the error if one occurred",
+        "   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received",
+        "   console.log('body:', body); // Print the HTML for the Google homepage.",
+        "});",
+        "</code></pre>",
+        "<br />",
+
+        "<p class='info-text' ><span class='semi-title'>cross-env</span></p>",
+        "<p class='info-text'>Run scripts that set and use environment variables across platforms</p>",
+        "<p class='info-text'>I use this in my npm scripts:</p>",
+        "<pre><code class='language-json'>{",
+        "   \"scripts\": {",
+        "   \"start\": \"cross-env PORT=80 node app.js\",",
+        "   \"start-dev\": \"cross-env PORT=3000 nodemon app.js\"",
+        "  }",
+        "}",
+        "</code></pre>",
+        "<p class='info-text'>The PORT environment variable will be set by cross-env </p>",
+        "<p class='info-text'>This is how I use it in the code:</p>",
+        "<pre><code class='language-javascript'>const port = process.env.PORT ? process.env.PORT : 3000; //put the PORT value from the env in a variable",
+        "const server = app.listen(port, (error) => {",
+        "   if(error){",
+        "   console.log(error)",
+        "   }",
+        "console.log(\"System running on port\", server.address().port )",
+        "});",
+        "</code></pre>"
+        
+      ]
+    },
+
+    "rest": {
+      "content": [
+        "<h1 class='title'>REST API</h1>",
+        "<p class='info-text'>An <span class='bold-text'>API</span> is an application programming interface. It is a set of rules that allow programs to talk to each other. The developer creates the API on the server and allows the client to talk to it.</p>",
+        "<p class='info-text'><span class='bold-text'>REST</span> determines how the API looks like. It stands for “Representational State Transfer”. It is a set of rules that developers follow when they create their API. One of these rules states that you should be able to get a piece of data (called a resource) when you link to a specific URL.</p>",
+        "<p class='info-text'>Each URL is called a <span class='bold-text'>request</span> while the data sent back to you is called a <span class='bold-text'>response</span>.</p>",
+        "<br />",
+
+        "<p class='info-text' ><span class='semi-title'>HTTP Methods</span></p>",
+        "<p class='info-text'><span class='bold-text'>HTTP</span> defines a set of request methods to indicate the desired action to be performed for a given resource</p>",
+        "<p class='info-text'>In REST, primary data representation is called <span class='bold-text'>Resource</span>.</p>",
+        "<p class='info-text'><span class='bold-text'>A resource can be a member or a collection</span>. For example, “<code>devices</code>” is a collection resource and “<code>device</code>” is a member resource. We can identify “<code>devices</code>” collection resource using the URI “<code>/devices</code>”. We can identify a member “<code>device</code>” resource using the URI “<code>/devices/{deviceId}</code>”.",
+        "<br />",
+        "<br />",
+        "<p class='info-text' ><span class='semi-title'>GET</span></p>"
       ]
     }
+      
+    
 
 }
